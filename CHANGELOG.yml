@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
 changes:
+  0.0.2:
+    - Corrections and clarifications to gemspec.
   0.0.1:
     - Initial release.
