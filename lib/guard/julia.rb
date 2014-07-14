@@ -1,12 +1,15 @@
-require "guard"
-require "guard/plugin"
+require 'guard'
+require 'guard/plugin'
 
 module Guard
+  # Guard plugin for the Julia language.
   class Julia < Plugin
-    require "guard/julia/version"
-    require "guard/julia/runner"
+    require 'guard/julia/version'
+    require 'guard/julia/runner'
 
+    # Options for plugin.
     attr_accessor :options
+    # Runner that handles Julia commands.
     attr_accessor :runner
 
     def initialize(options = {})
@@ -19,7 +22,7 @@ module Guard
     end
 
     def start
-      UI.info "Guard::Julia #{Julia::VERSION} is running"
+      UI.info "Guard::Julia #{JuliaVersion::VERSION} is running"
       run_all if @options[:all_on_start]
     end
 
@@ -32,32 +35,33 @@ module Guard
     end
 
     def run_all
-      UI.info("Running: all tests", reset: true)
+      UI.info 'Running: all tests', reset: true
       throw_on_failed_tests { runner.run_all }
     end
 
-    def run_on_changes(paths)
+    def run_on_changes(_)
       true
     end
 
-    def run_on_additions(paths)
+    def run_on_additions(_)
       true
     end
 
     def run_on_modifications(paths)
-      UI.info("Running: #{paths.join(' ')}", reset: true)
+      UI.info "Running: #{paths.join(', ')}", reset: true
       throw_on_failed_tests { runner.run_on_modifications(paths) }
     end
 
-    def run_on_removals(paths)
+    def run_on_removals(_)
       true
     end
 
     private
 
+    # Runs block and throws :task_has_failed
+    # when return is false.
     def throw_on_failed_tests
       throw :task_has_failed unless yield
     end
-
   end
 end
