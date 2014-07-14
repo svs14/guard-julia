@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Samuel Jenkins']
   spec.email         = ['svs14.41svs@gmail.com']
   spec.summary       = 'Guard plugin for Julia language'
-  spec.description   = 'Guard::Julia automatically runs tests when Julia files change'
-  spec.homepage      = 'https://rubygems.org/gems/guard-julia'
+  spec.description   = 'Guard::Julia automatically runs tests when Julia source files change'
+  spec.homepage      = 'https://github.com/svs14/guard-julia'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
