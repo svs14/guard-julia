@@ -51,7 +51,7 @@ cli: ['--code-coverage'] # CLI arguments to Julia
 env: {} # Environment variables
 ```
 
-You can pass any of these options to Guard like so:
+You can pass any of these options in the Guardfile like so:
 ```ruby
 guard :julia, cli: ['--code-coverage', '-p 1'] do
   # ...
