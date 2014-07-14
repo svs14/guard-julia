@@ -21,7 +21,7 @@ Ruby must be installed, then run:
     $ cd /your/julia/project/dir
     $ bundle init
 
-Add this line to your application's Gemfile:
+Add this line to your project's newly created Gemfile:
 
     gem 'guard-julia'
 
