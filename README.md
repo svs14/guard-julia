@@ -17,17 +17,17 @@ The codebase's architecture is largely derived from
 
 Ruby must be installed, then run:
 
-  $ gem install bundler
-  $ cd /your/julia/project/dir
-  $ bundle init
+    $ gem install bundler
+    $ cd /your/julia/project/dir
+    $ bundle init
 
 Add this line to your application's Gemfile:
 
-  gem 'guard-julia'
+    gem 'guard-julia'
 
 And then execute:
 
-  $ bundle
+    $ bundle
 
 ## Usage
 
@@ -35,11 +35,11 @@ Please read [Guard usage documentation](http://github.com/guard/guard#readme).
 
 To create the Guardfile run:
 
-  $ bundle exec guard init julia
+    $ bundle exec guard init julia
 
 Then run guard itself:
 
-  $ bundle exec guard
+    $ bundle exec guard
 
 ## Options
 
