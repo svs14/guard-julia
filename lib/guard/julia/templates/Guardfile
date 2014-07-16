@@ -1,8 +1,8 @@
 guard :julia do
   # Run all tests when [PackageName].jl changes.
-  watch(%r{^src/(.*/)?(.*?[A-Z].*)\.jl}) { |m| "test/runtests.jl" }
+  watch(%r{^src/(.*/)?(.*?[A-Z].*)\.jl$}) { |m| "test/runtests.jl" }
   # Run respective test when a source file changes.
-  watch(%r{^src/(.*/)?([^A-Z]*)\.jl}) { |m| "test/#{m[1]}test_#{m[2]}.jl"}
+  watch(%r{^src/(.*/)?([^A-Z]*)\.jl$}) { |m| "test/#{m[1]}test_#{m[2]}.jl"}
   # Run test file when it changes.
-  watch(%r{^test/(.*/)?(.*)\.jl}) { |m| "test/#{m[1]}#{m[2]}.jl" }
+  watch(%r{^test/(.*/)?(.*)\.jl$}) { |m| "test/#{m[1]}#{m[2]}.jl" }
 end
